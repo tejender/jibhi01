@@ -1,5 +1,6 @@
 {% extends 'main.html' %}
 {% block content %}
+
     <div class="categories">
         {% for category in categories %}
             <div class="single-cat">
@@ -9,6 +10,11 @@
         {% endfor %}
     </div>
     <div class="body-container">
+        <div class="center-heading">
+            <h2>
+                Trending in jibhi valley
+            </h2>
+        </div>
         <div class="properties">
             {% for property in properties %}
                 <div class="listing-card">
@@ -30,6 +36,7 @@
 
             {% endfor %}
         </div>
+        
 
         <div class="places">
             {% for place in places %}
