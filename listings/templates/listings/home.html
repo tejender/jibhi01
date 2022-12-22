@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+{% block content %}
+    <div class="categories">
+        {% for category in categories %}
+            <div class="single-cat">
+                <img src=" {{category.image.url}}" alt="hi" height="20px">                
+                {{category}}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="body-container">
+        <div class="properties">
+            {% for property in properties %}
+                <div class="listing-card">
+                    <div class="thumbnail">
+                        <img src="{{property.thumbnail.url}}" alt="" >
+                    </div>
+                    <div class="details">
+                        <b class="p-title">
+                            {{property.name}}
+                        </b>
+                        <small>
+                            ₹ {{property.price}}  Night
+                        </small>
+                        <small>
+                            {{property.rooms}} Rooms
+                        </small>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+        <div class="places">
+            {% for place in places %}
+            
+            <div class="places-card">
+                    <a href="{% url 'places-to-visit' place.slug  %}">
+
+                    <div class="thumbnail">
+                        <img src="{{place.thumbnail.url}}" alt="" >
+                    </div>
+                    <div class="places-details">
+                        <b class="p-title">
+                            {{place.name}}
+                        </b>
+                        
+                    </div>
+                </a>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
