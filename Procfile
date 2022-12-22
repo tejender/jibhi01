@@ -1,1 +1,1 @@
-web: gunicorn 'jibhi.wsgi'
+web: gunicorn jibhi.wsgi --log-file -
